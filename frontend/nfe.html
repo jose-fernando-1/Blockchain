@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Notas Fiscais</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Registrar Nota Fiscal</h2>
+  
+  <!-- Opção 1: Upload de arquivo XML -->
+  <div class="upload-section">
+    <h3>Upload de Arquivo XML</h3>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input type="file" id="xmlFile" accept=".xml" required>
+      <button type="submit">Processar XML</button>
+    </form>
+  </div>
+
+  <div class="separator">
+    <span>OU</span>
+  </div>
+
+  <!-- Opção 2: Inserção manual -->
+  <div class="manual-section">
+    <h3>Inserção Manual</h3>
+    <form id="notaForm">
+      <input type="text" id="numeroNota" placeholder="Número da Nota" required><br>
+      <input type="text" id="valorNota" placeholder="Valor (R$)" required><br>
+      <input type="date" id="dataEmissao" required><br>
+      <button type="submit">Registrar</button>
+    </form>
+  </div>
+
+  <h3>Notas registradas:</h3>
+  <ul id="listaNotas"></ul>
+
+  <script src="nfe.js"></script>
+</body>
+</html>
