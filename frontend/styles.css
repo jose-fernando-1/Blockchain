@@ -1,0 +1,94 @@
+body {
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+  padding: 30px;
+  text-align: center;
+}
+
+input, button {
+  margin: 10px;
+  padding: 10px;
+  width: 250px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Seções de upload e manual */
+.upload-section, .manual-section {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.upload-section h3, .manual-section h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+/* Separador */
+.separator {
+  margin: 20px 0;
+  text-align: center;
+  position: relative;
+}
+
+.separator:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #ddd;
+}
+
+.separator span {
+  background: #f9f9f9;
+  padding: 0 15px;
+  color: #666;
+  font-weight: bold;
+}
+
+/* Estilo para input file */
+input[type="file"] {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+}
+
+/* Feedback visual */
+.success-message {
+  color: #28a745;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+
+.error-message {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+
+.loading {
+  color: #007bff;
+  font-style: italic;
+}

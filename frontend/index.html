@@ -1,0 +1,15 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Início</title>
+  <script>
+    const logado = localStorage.getItem('logado') === 'true';
+    window.location.href = logado ? 'nfe.html' : 'login.html';
+  </script>
+</head>
+<body>
+  <p>Redirecionando...</p>
+</body>
+</html>
