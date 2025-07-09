@@ -6,7 +6,10 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h2>Registrar Nota Fiscal</h2>
+  <div class="header">
+    <h2>Registrar Nota Fiscal</h2>
+    <button id="logoutBtn" class="logout-btn" onclick="logout()">Logout</button>
+  </div>
   
   <!-- Opção 1: Upload de arquivo XML -->
   <div class="upload-section">
@@ -35,6 +38,7 @@
   <h3>Notas registradas:</h3>
   <ul id="listaNotas"></ul>
 
+  <script src="auth.js"></script>
   <script src="nfe.js"></script>
 </body>
 </html>

@@ -62,7 +62,7 @@ function processarXML(xmlContent) {
 // Função para registrar nota fiscal
 async function registrarNotaFiscal(dadosNota) {
     try {
-        const token = localStorage.getItem('authToken');
+        const token = localStorage.getItem('token');
         if (!token) {
             throw new Error('Token de autenticação não encontrado');
         }

@@ -5,6 +5,36 @@ body {
   text-align: center;
 }
 
+/* Header com botão de logout */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: auto;
+  margin: 0;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
 input, button {
   margin: 10px;
   padding: 10px;
