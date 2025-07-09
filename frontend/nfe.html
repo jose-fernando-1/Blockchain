@@ -1,44 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <title>Notas Fiscais</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <div class="header">
-    <h2>Registrar Nota Fiscal</h2>
-    <button id="logoutBtn" class="logout-btn" onclick="logout()">Logout</button>
-  </div>
-  
-  <!-- Opção 1: Upload de arquivo XML -->
-  <div class="upload-section">
-    <h3>Upload de Arquivo XML</h3>
-    <form id="uploadForm" enctype="multipart/form-data">
-      <input type="file" id="xmlFile" accept=".xml" required>
-      <button type="submit">Processar XML</button>
+  <div class="container">
+    <div class="header-actions">
+      <button type="button" id="logoutBtn" class="btn-logout" onclick="logout()">Sair</button>
+    </div>
+
+    <h1>Cadastro de Nota Fiscal</h1>
+
+    <form id="nfeForm">
+      <!-- Seção Cliente -->
+      <div class="section">
+        <h2>Dados do Cliente</h2>
+
+        <div class="form-group">
+          <label for="clienteNome">Nome:</label>
+          <input type="text" id="clienteNome" name="clienteNome" required>
+        </div>
+
+        <div class="form-group">
+          <label for="clienteCpf">CPF:</label>
+          <input type="text" id="clienteCpf" name="clienteCpf" pattern="\d{11}" required placeholder="12345678900">
+        </div>
+
+        <div class="form-group">
+          <label for="clienteEndereco">Endereço:</label>
+          <input type="text" id="clienteEndereco" name="clienteEndereco" required>
+        </div>
+      </div>
+
+      <!-- Seção Produtos -->
+      <div class="section">
+        <h2>Produtos <span class="opcional">(Opcional)</span></h2>
+        <p class="info">Você pode adicionar produtos ou deixar esta seção vazia para criar uma nota fiscal apenas com
+          valor.</p>
+        <div id="produtos">
+          <!-- Produtos serão adicionados dinamicamente -->
+        </div>
+
+        <button type="button" id="adicionarProduto" class="btn-secondary">Adicionar Produto</button>
+      </div>
+
+      <!-- Valor Total -->
+      <div class="section">
+        <div class="form-group">
+          <label for="valorTotal">Valor Total (R$):</label>
+          <input type="number" id="valorTotal" name="valorTotal" step="0.01" required>
+        </div>
+      </div>
+
+      <!-- Botões -->
+      <div class="form-actions">
+        <button type="button" id="calcularTotal" class="btn-secondary">Calcular Total</button>
+        <button type="submit" class="btn-primary">Enviar Nota Fiscal</button>
+      </div>
     </form>
-  </div>
 
-  <div class="separator">
-    <span>OU</span>
+    <div id="resultado" class="resultado"></div>
   </div>
-
-  <!-- Opção 2: Inserção manual -->
-  <div class="manual-section">
-    <h3>Inserção Manual</h3>
-    <form id="notaForm">
-      <input type="text" id="numeroNota" placeholder="Número da Nota" required><br>
-      <input type="text" id="valorNota" placeholder="Valor (R$)" required><br>
-      <input type="date" id="dataEmissao" required><br>
-      <button type="submit">Registrar</button>
-    </form>
-  </div>
-
-  <h3>Notas registradas:</h3>
-  <ul id="listaNotas"></ul>
 
   <script src="auth.js"></script>
   <script src="nfe.js"></script>
 </body>
+
 </html>
