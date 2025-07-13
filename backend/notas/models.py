@@ -28,4 +28,3 @@ class NotaFiscal(models.Model):
             self.hash = hashlib.sha256(dados.encode()).hexdigest()
 
         super().save(*args, **kwargs)
-       # registrar_na_blockchain(self.hash, self.usuario.cnpj)
