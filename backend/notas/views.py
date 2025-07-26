@@ -13,17 +13,17 @@ class NotaFiscalCreateView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(usuario=self.request.user)
 
-    def consultar_nota(request, numero):
-        try:
-            nota = NotaFiscal.objects.get(numero=numero)
-            return JsonResponse({
-                "numero": nota.numero,
-                "hash": nota.hash,
-                "valor": str(nota.valor),
-                "data_emissao": nota.data_emissao,
-                "usuario": nota.usuario.id,
-            })
-        except NotaFiscal.DoesNotExist:
-            return JsonResponse({"erro": "Nota não encontrada"}, status=404)
+def consultar_nota(request, numero):
+    try:
+        nota = NotaFiscal.objects.get(numero=numero)
+        return JsonResponse({
+            "numero": nota.numero,
+            "hash": nota.hash,
+            "valor": str(nota.valor),
+            "data_emissao": nota.data_emissao,
+            "usuario": nota.usuario.id,
+        })
+    except NotaFiscal.DoesNotExist:
+        return JsonResponse({"erro": "Nota não encontrada"}, status=404)
 
 
